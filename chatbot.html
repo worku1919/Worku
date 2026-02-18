@@ -1,0 +1,1929 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worku Fikadu - Full Stack Developer & Digital Marketing Expert</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4a6bff;
+            --secondary-color: #6c5ce7;
+            --dark-color: #2c3e50;
+            --light-color: #f8f9fa;
+            --text-color: #6c757d;
+            --white: #ffffff;
+            --success-color: #28a745;
+            --warning-color: #ffc107;
+            --danger-color: #dc3545;
+            --info-color: #17a2b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            padding: 10px 0;
+            background: rgba(255, 255, 255, 0.98);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .nav-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--dark-color);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 100px 20px;
+            background: linear-gradient(135deg, rgba(74, 107, 255, 0.9), rgba(108, 92, 231, 0.9)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,112C1248,107,1344,117,1392,122.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat center bottom;
+            background-size: cover;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: var(--white);
+            color: var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        /* Main Content Container */
+        .main-container {
+            background: var(--white);
+            border-radius: 30px 30px 0 0;
+            margin-top: -30px;
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 20px;
+            background: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-title p {
+            color: var(--text-color);
+            font-size: 1.1rem;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-text {
+            padding: 20px;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+
+        .about-text p {
+            color: var(--text-color);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 20px;
+            background: var(--light-color);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--white);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+
+        .service-card p {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 80px 20px;
+            background: var(--white);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .portfolio-item {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .portfolio-image {
+            height: 250px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--white);
+        }
+
+        .portfolio-content {
+            padding: 30px;
+        }
+
+        .portfolio-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+
+        .portfolio-content p {
+            color: var(--text-color);
+            margin-bottom: 20px;
+        }
+
+        .portfolio-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tech-tag {
+            background: var(--light-color);
+            color: var(--primary-color);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 20px;
+            background: var(--light-color);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 50px;
+        }
+
+        .contact-info {
+            padding: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            margin-right: 20px;
+            font-size: 1.2rem;
+        }
+
+        .contact-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--dark-color);
+        }
+
+        .contact-text p {
+            color: var(--text-color);
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--dark-color);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-color);
+            color: var(--white);
+            padding: 60px 20px 20px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .footer-section p {
+            color: #bbb;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bbb;
+        }
+
+        /* Chatbot Styles */
+        .chatbot-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 9999;
+        }
+
+        .chatbot-toggle {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(74, 107, 255, 0.4);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(74, 107, 255, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(74, 107, 255, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(74, 107, 255, 0);
+            }
+        }
+
+        .chatbot-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        .chatbot-toggle.active {
+            transform: rotate(180deg);
+        }
+
+        .chatbot {
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            width: 380px;
+            height: 600px;
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            visibility: hidden;
+            transform: scale(0.8) translateY(20px);
+            transition: all 0.3s ease;
+        }
+
+        .chatbot.active {
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1) translateY(0);
+        }
+
+        .chatbot-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 20px;
+            border-radius: 20px 20px 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .chatbot-header-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .chatbot-avatar {
+            width: 40px;
+            height: 40px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+
+        .chatbot-avatar i {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        .chatbot-header-text h3 {
+            font-size: 1.1rem;
+            margin-bottom: 3px;
+        }
+
+        .chatbot-status {
+            display: flex;
+            align-items: center;
+            font-size: 0.8rem;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: #4CAF50;
+            border-radius: 50%;
+            margin-right: 5px;
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .chatbot-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .chatbot-action-btn {
+            width: 30px;
+            height: 30px;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 50%;
+            color: var(--white);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .chatbot-action-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+
+        .chatbot-body {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background: #f9f9f9;
+        }
+
+        .chatbot-message {
+            display: flex;
+            margin-bottom: 15px;
+            animation: fadeInUp 0.3s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .message-avatar {
+            width: 30px;
+            height: 30px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 0.8rem;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+
+        .message-content {
+            max-width: 70%;
+        }
+
+        .message-bubble {
+            background: var(--white);
+            padding: 12px 16px;
+            border-radius: 18px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .message-bubble.user {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+        }
+
+        .message-time {
+            font-size: 0.7rem;
+            color: #999;
+            margin-top: 5px;
+            text-align: right;
+        }
+
+        .message-bubble.user .message-time {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .typing-indicator {
+            display: none;
+            align-items: center;
+            padding: 15px;
+        }
+
+        .typing-indicator.active {
+            display: flex;
+        }
+
+        .typing-dots {
+            display: flex;
+            gap: 4px;
+        }
+
+        .typing-dot {
+            width: 8px;
+            height: 8px;
+            background: #999;
+            border-radius: 50%;
+            animation: typing 1.4s infinite;
+        }
+
+        .typing-dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .typing-dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes typing {
+            0%, 60%, 100% {
+                transform: translateY(0);
+            }
+            30% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .chatbot-suggestions {
+            padding: 0 20px 10px;
+        }
+
+        .suggestion-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .suggestion-chip {
+            background: var(--white);
+            border: 1px solid #e0e0e0;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .suggestion-chip:hover {
+            background: var(--primary-color);
+            color: var(--white);
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .chatbot-input-container {
+            padding: 15px 20px;
+            background: var(--white);
+            border-top: 1px solid #e0e0e0;
+            border-radius: 0 0 20px 20px;
+        }
+
+        .chatbot-input-wrapper {
+            display: flex;
+            align-items: center;
+            background: #f5f5f5;
+            border-radius: 25px;
+            padding: 5px;
+        }
+
+        .chatbot-input {
+            flex: 1;
+            border: none;
+            background: transparent;
+            padding: 10px 15px;
+            font-size: 0.95rem;
+            outline: none;
+        }
+
+        .chatbot-input-actions {
+            display: flex;
+            gap: 5px;
+        }
+
+        .input-action-btn {
+            width: 35px;
+            height: 35px;
+            background: var(--primary-color);
+            border: none;
+            border-radius: 50%;
+            color: var(--white);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .input-action-btn:hover {
+            background: var(--secondary-color);
+            transform: scale(1.1);
+        }
+
+        .input-action-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: scale(1);
+        }
+
+        /* Quick Actions */
+        .quick-actions {
+            position: absolute;
+            bottom: 80px;
+            right: 80px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            opacity: 0;
+            visibility: hidden;
+            transform: scale(0.8);
+            transition: all 0.3s ease;
+        }
+
+        .quick-actions.active {
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1);
+        }
+
+        .quick-action-btn {
+            width: 50px;
+            height: 50px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .quick-action-btn:hover {
+            transform: scale(1.1);
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        .quick-action-tooltip {
+            position: absolute;
+            right: 60px;
+            background: var(--dark-color);
+            color: var(--white);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .quick-action-btn:hover .quick-action-tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background: var(--white);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                padding: 20px 0;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .chatbot {
+                width: calc(100vw - 40px);
+                right: -10px;
+                height: 500px;
+            }
+
+            .chatbot-container {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .quick-actions {
+                right: 70px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 60px 20px;
+            }
+
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+
+            .chatbot {
+                width: calc(100vw - 20px);
+                right: -5px;
+                height: 450px;
+            }
+
+            .chatbot-container {
+                bottom: 15px;
+                right: 15px;
+            }
+
+            .quick-actions {
+                right: 65px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-code"></i>
+                Worku Fikadu
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Welcome to My Digital World</h1>
+            <p class="subtitle">Full Stack Developer & Digital Marketing Expert</p>
+            <div class="hero-buttons">
+                <a href="#portfolio" class="btn btn-primary">View Portfolio</a>
+                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- About Section -->
+        <section class="about" id="about">
+            <div class="container">
+                <div class="section-title">
+                    <h2>About Me</h2>
+                    <p>Passionate developer creating digital solutions</p>
+                </div>
+                <div class="about-content">
+                    <div class="about-image">
+                        <div style="width: 100%; height: 350px; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); border-radius: 20px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-user" style="font-size: 5rem; color: white;"></i>
+                        </div>
+                    </div>
+                    <div class="about-text">
+                        <h3>Hi, I'm Worku Fikadu</h3>
+                        <p>I'm a passionate full-stack developer and digital marketing expert with over 8 years of experience in creating innovative digital solutions. My expertise spans across web development, mobile applications, and comprehensive digital marketing strategies.</p>
+                        <p>I specialize in turning ideas into reality through clean code, intuitive design, and data-driven marketing approaches. My goal is to help businesses establish a strong online presence and achieve their digital objectives.</p>
+                        <div class="skills">
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">SEO</span>
+                            <span class="skill-tag">Digital Marketing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services" id="services">
+            <div class="container">
+                <div class="section-title">
+                    <h2>My Services</h2>
+                    <p>Comprehensive digital solutions for your business</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>Web Development</h3>
+                        <p>Custom websites and web applications built with modern technologies. Responsive design, fast performance, and SEO optimization included.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Mobile Apps</h3>
+                        <p>Native and cross-platform mobile applications for iOS and Android. User-friendly interfaces and smooth user experience.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Digital Marketing</h3>
+                        <p>Comprehensive digital marketing strategies including SEO, social media marketing, content marketing, and PPC campaigns.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3>UI/UX Design</h3>
+                        <p>Beautiful and intuitive user interfaces designed with user experience in mind. Modern design principles and best practices.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3>Backend Development</h3>
+                        <p>Robust and scalable backend solutions with APIs, databases, and server-side logic. Secure and efficient data management.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>SEO Optimization</h3>
+                        <p>Improve your website's visibility on search engines. Technical SEO, content optimization, and link building strategies.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section class="portfolio" id="portfolio">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Portfolio</h2>
+                    <p>Recent projects I've worked on</p>
+                </div>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item">
+                        <div class="portfolio-image">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>E-Commerce Platform</h3>
+                            <p>Full-featured online shopping platform with payment integration, inventory management, and real-time order tracking.</p>
+                            <div class="portfolio-tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">MongoDB</span>
+                                <span class="tech-tag">Stripe</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <div class="portfolio-image">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>Analytics Dashboard</h3>
+                            <p>Real-time business analytics dashboard with data visualization, reporting features, and predictive analytics.</p>
+                            <div class="portfolio-tech">
+                                <span class="tech-tag">Vue.js</span>
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                                <span class="tech-tag">D3.js</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <div class="portfolio-image">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>Learning Management System</h3>
+                            <p>Comprehensive e-learning platform with course management, video streaming, quizzes, and progress tracking.</p>
+                            <div class="portfolio-tech">
+                                <span class="tech-tag">Angular</span>
+                                <span class="tech-tag">Django</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">AWS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Get In Touch</h2>
+                    <p>Let's discuss your next project</p>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Location</h4>
+                                <p>Addis Ababa, Ethiopia</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <p>worku.fikadu@example.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Phone</h4>
+                                <p>+251 9XX XXX XXX</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Your Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Worku Fikadu</h3>
+                <p>Full-stack developer and digital marketing expert passionate about creating innovative digital solutions that drive business growth.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Web Development</a></li>
+                    <li><a href="#">Mobile Apps</a></li>
+                    <li><a href="#">Digital Marketing</a></li>
+                    <li><a href="#">UI/UX Design</a></li>
+                    <li><a href="#">SEO Optimization</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-envelope"></i> worku.fikadu@example.com</p>
+                <p><i class="fas fa-phone"></i> +251 9XX XXX XXX</p>
+                <p><i class="fas fa-map-marker-alt"></i> Addis Ababa, Ethiopia</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Worku Fikadu. All rights reserved. | Designed with <i class="fas fa-heart" style="color: var(--danger-color);"></i> by Worku Fikadu</p>
+        </div>
+    </footer>
+
+    <!-- Chatbot Container -->
+    <div class="chatbot-container">
+        <!-- Quick Actions -->
+        <div class="quick-actions" id="quickActions">
+            <div class="quick-action-btn" data-action="services">
+                <i class="fas fa-code"></i>
+                <span class="quick-action-tooltip">Ask about services</span>
+            </div>
+            <div class="quick-action-btn" data-action="pricing">
+                <i class="fas fa-dollar-sign"></i>
+                <span class="quick-action-tooltip">Check pricing</span>
+            </div>
+            <div class="quick-action-btn" data-action="portfolio">
+                <i class="fas fa-briefcase"></i>
+                <span class="quick-action-tooltip">View portfolio</span>
+            </div>
+        </div>
+
+        <!-- Chatbot Toggle Button -->
+        <div class="chatbot-toggle" id="chatbotToggle">
+            <i class="fas fa-comments"></i>
+        </div>
+
+        <!-- Chatbot Window -->
+        <div class="chatbot" id="chatbot">
+            <!-- Chatbot Header -->
+            <div class="chatbot-header">
+                <div class="chatbot-header-info">
+                    <div class="chatbot-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="chatbot-header-text">
+                        <h3>Worku Assistant</h3>
+                        <div class="chatbot-status">
+                            <span class="status-dot"></span>
+                            <span>Online - Ready to help</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chatbot-actions">
+                    <button class="chatbot-action-btn" id="clearChat">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                    <button class="chatbot-action-btn" id="minimizeChat">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Chatbot Body -->
+            <div class="chatbot-body" id="chatbotBody">
+                <!-- Messages will be dynamically added here -->
+            </div>
+
+            <!-- Typing Indicator -->
+            <div class="typing-indicator" id="typingIndicator">
+                <div class="message-avatar">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="typing-dots">
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                </div>
+            </div>
+
+            <!-- Chatbot Suggestions -->
+            <div class="chatbot-suggestions">
+                <div class="suggestion-chips">
+                    <div class="suggestion-chip" data-suggestion="services">What services do you offer?</div>
+                    <div class="suggestion-chip" data-suggestion="pricing">How much do you charge?</div>
+                    <div class="suggestion-chip" data-suggestion="timeline">How long does a project take?</div>
+                    <div class="suggestion-chip" data-suggestion="contact">How can I contact you?</div>
+                </div>
+            </div>
+
+            <!-- Chatbot Input -->
+            <div class="chatbot-input-container">
+                <div class="chatbot-input-wrapper">
+                    <input type="text" class="chatbot-input" id="chatbotInput" placeholder="Type your message...">
+                    <div class="chatbot-input-actions">
+                        <button class="input-action-btn" id="attachBtn">
+                            <i class="fas fa-paperclip"></i>
+                        </button>
+                        <button class="input-action-btn" id="sendBtn">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Navigation Toggle
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth Scrolling for Navigation Links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
+
+        // Contact Form Handler
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Add your form submission logic here
+            alert('Thank you for your message! I will get back to you soon.');
+            e.target.reset();
+        });
+
+        // Chatbot Class
+        class Chatbot {
+            constructor() {
+                this.chatbot = document.getElementById('chatbot');
+                this.chatbotToggle = document.getElementById('chatbotToggle');
+                this.chatbotBody = document.getElementById('chatbotBody');
+                this.chatbotInput = document.getElementById('chatbotInput');
+                this.sendBtn = document.getElementById('sendBtn');
+                this.clearChatBtn = document.getElementById('clearChat');
+                this.minimizeChatBtn = document.getElementById('minimizeChat');
+                this.typingIndicator = document.getElementById('typingIndicator');
+                this.quickActions = document.getElementById('quickActions');
+                
+                this.isOpen = false;
+                this.currentLanguage = 'en';
+                this.conversationHistory = [];
+                
+                this.init();
+            }
+
+            init() {
+                // Event Listeners
+                this.chatbotToggle.addEventListener('click', () => this.toggleChatbot());
+                this.sendBtn.addEventListener('click', () => this.sendMessage());
+                this.chatbotInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') this.sendMessage();
+                });
+                this.clearChatBtn.addEventListener('click', () => this.clearChat());
+                this.minimizeChatBtn.addEventListener('click', () => this.toggleChatbot());
+                
+                // Suggestion chips
+                document.querySelectorAll('.suggestion-chip').forEach(chip => {
+                    chip.addEventListener('click', () => {
+                        const suggestion = chip.getAttribute('data-suggestion');
+                        this.handleSuggestion(suggestion);
+                    });
+                });
+
+                // Quick action buttons
+                document.querySelectorAll('.quick-action-btn').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const action = btn.getAttribute('data-action');
+                        this.handleQuickAction(action);
+                    });
+                });
+
+                // Welcome message
+                setTimeout(() => {
+                    this.addMessage('bot', this.getWelcomeMessage());
+                }, 2000);
+            }
+
+            toggleChatbot() {
+                this.isOpen = !this.isOpen;
+                this.chatbot.classList.toggle('active');
+                this.chatbotToggle.classList.toggle('active');
+                this.quickActions.classList.toggle('active');
+                
+                if (this.isOpen) {
+                    this.chatbotInput.focus();
+                }
+            }
+
+            sendMessage() {
+                const message = this.chatbotInput.value.trim();
+                if (!message) return;
+
+                // Add user message
+                this.addMessage('user', message);
+                this.chatbotInput.value = '';
+                
+                // Show typing indicator
+                this.showTypingIndicator();
+                
+                // Process message and respond
+                setTimeout(() => {
+                    this.hideTypingIndicator();
+                    const response = this.generateResponse(message);
+                    this.addMessage('bot', response);
+                }, 1000 + Math.random() * 1000);
+            }
+
+            addMessage(sender, message) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `chatbot-message ${sender}`;
+                
+                const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                
+                if (sender === 'user') {
+                    messageDiv.innerHTML = `
+                        <div class="message-content">
+                            <div class="message-bubble user">
+                                ${message}
+                                <div class="message-time">${time}</div>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    messageDiv.innerHTML = `
+                        <div class="message-avatar">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="message-content">
+                            <div class="message-bubble">
+                                ${message}
+                                <div class="message-time">${time}</div>
+                            </div>
+                        </div>
+                    `;
+                }
+                
+                this.chatbotBody.appendChild(messageDiv);
+                this.scrollToBottom();
+                
+                // Add to conversation history
+                this.conversationHistory.push({ sender, message, time });
+            }
+
+            generateResponse(message) {
+                const lowerMessage = message.toLowerCase();
+                
+                // Service related queries
+                if (lowerMessage.includes('service') || lowerMessage.includes('what do you do') || lowerMessage.includes('offer')) {
+                    return this.getServiceResponse();
+                }
+                
+                // Pricing related queries
+                if (lowerMessage.includes('price') || lowerMessage.includes('cost') || lowerMessage.includes('charge') || lowerMessage.includes('how much')) {
+                    return this.getPricingResponse();
+                }
+                
+                // Timeline related queries
+                if (lowerMessage.includes('time') || lowerMessage.includes('timeline') || lowerMessage.includes('how long') || lowerMessage.includes('duration')) {
+                    return this.getTimelineResponse();
+                }
+                
+                // Contact related queries
+                if (lowerMessage.includes('contact') || lowerMessage.includes('reach') || lowerMessage.includes('email') || lowerMessage.includes('phone')) {
+                    return this.getContactResponse();
+                }
+                
+                // Portfolio related queries
+                if (lowerMessage.includes('portfolio') || lowerMessage.includes('project') || lowerMessage.includes('work') || lowerMessage.includes('example')) {
+                    return this.getPortfolioResponse();
+                }
+                
+                // Technology related queries
+                if (lowerMessage.includes('technology') || lowerMessage.includes('tech') || lowerMessage.includes('stack') || lowerMessage.includes('skill')) {
+                    return this.getTechnologyResponse();
+                }
+                
+                // Experience related queries
+                if (lowerMessage.includes('experience') || lowerMessage.includes('year') || lowerMessage.includes('background')) {
+                    return this.getExperienceResponse();
+                }
+                
+                // Greeting messages
+                if (lowerMessage.includes('hello') || lowerMessage.includes('hi') || lowerMessage.includes('hey') || lowerMessage.includes('greetings')) {
+                    return this.getGreetingResponse();
+                }
+                
+                // Thank you messages
+                if (lowerMessage.includes('thank') || lowerMessage.includes('thanks') || lowerMessage.includes('appreciate')) {
+                    return this.getThankYouResponse();
+                }
+                
+                // Default response
+                return this.getDefaultResponse();
+            }
+
+            getServiceResponse() {
+                return `
+                    <strong>🚀 Our Services Include:</strong><br><br>
+                    <strong>Web Development:</strong><br>
+                    • Custom websites & web applications<br>
+                    • E-commerce solutions<br>
+                    • Content management systems<br>
+                    • Responsive design<br><br>
+                    
+                    <strong>Mobile App Development:</strong><br>
+                    • iOS & Android apps<br>
+                    • Cross-platform solutions<br>
+                    • App maintenance & updates<br><br>
+                    
+                    <strong>Digital Marketing:</strong><br>
+                    • SEO optimization<br>
+                    • Social media marketing<br>
+                    • Content marketing<br>
+                    • PPC campaigns<br><br>
+                    
+                    Would you like to know more about any specific service?
+                `;
+            }
+
+            getPricingResponse() {
+                return `
+                    <strong>💰 Pricing Information:</strong><br><br>
+                    Our pricing varies based on project complexity:<br><br>
+                    
+                    <strong>Basic Website:</strong> $500 - $1,500<br>
+                    • 5-10 pages<br>
+                    • Responsive design<br>
+                    • Basic SEO<br><br>
+                    
+                    <strong>Advanced Website:</strong> $1,500 - $5,000<br>
+                    • Custom features<br>
+                    • Database integration<br>
+                    • Advanced SEO<br><br>
+                    
+                    <strong>E-commerce:</strong> $2,000 - $10,000+<br>
+                    • Product catalog<br>
+                    • Payment integration<br>
+                    • Order management<br><br>
+                    
+                    <strong>Mobile Apps:</strong> Starting from $3,000<br><br>
+                    
+                    Would you like a detailed quote for your project?
+                `;
+            }
+
+            getTimelineResponse() {
+                return `
+                    <strong>⏰ Project Timelines:</strong><br><br>
+                    Project duration depends on complexity:<br><br>
+                    
+                    <strong>Basic Website:</strong> 2-4 weeks<br>
+                    <strong>Advanced Website:</strong> 4-8 weeks<br>
+                    <strong>E-commerce:</strong> 6-12 weeks<br>
+                    <strong>Mobile App:</strong> 8-16 weeks<br><br>
+                    
+                    <strong>Factors affecting timeline:</strong><br>
+                    • Project scope & features<br>
+                    • Content availability<br>
+                    • Feedback & revision cycles<br>
+                    • Third-party integrations<br><br>
+                    
+                    We'll provide a detailed timeline after understanding your requirements!
+                `;
+            }
+
+            getContactResponse() {
+                return `
+                    <strong>📞 Contact Information:</strong><br><br>
+                    <strong>Email:</strong> worku.fikadu@example.com<br>
+                    <strong>Phone:</strong> +251 9XX XXX XXX<br>
+                    <strong>Location:</strong> Addis Ababa, Ethiopia<br><br>
+                    
+                    <strong>Business Hours:</strong><br>
+                    Monday - Friday: 9:00 AM - 6:00 PM<br>
+                    Saturday: 10:00 AM - 4:00 PM<br>
+                    Sunday: Closed<br><br>
+                    
+                    You can also fill out the contact form on our website, and I'll get back to you within 24 hours!
+                `;
+            }
+
+            getPortfolioResponse() {
+                return `
+                    <strong>📁 Recent Projects:</strong><br><br>
+                    <strong>E-commerce Platform:</strong><br>
+                    • Full-stack online store<br>
+                    • Payment gateway integration<br>
+                    • Inventory management<br><br>
+                    
+                    <strong>Analytics Dashboard:</strong><br>
+                    • Real-time data visualization<br>
+                    • Business intelligence<br>
+                    • Custom reporting<br><br>
+                    
+                    <strong>Learning Management System:</strong><br>
+                    • Video streaming<br>
+                    • Progress tracking<br>
+                    • Interactive quizzes<br><br>
+                    
+                    Visit the portfolio section on our website to see more projects with detailed case studies!
+                `;
+            }
+
+            getTechnologyResponse() {
+                return `
+                    <strong>💻 Technologies We Use:</strong><br><br>
+                    <strong>Frontend:</strong><br>
+                    • React, Vue.js, Angular<br>
+                    • HTML5, CSS3, JavaScript<br>
+                    • Bootstrap, Tailwind CSS<br><br>
+                    
+                    <strong>Backend:</strong><br>
+                    • Node.js, Python, PHP<br>
+                    • Express, Django, Laravel<br>
+                    • RESTful APIs, GraphQL<br><br>
+                    
+                    <strong>Database:</strong><br>
+                    • MySQL, PostgreSQL<br>
+                    • MongoDB, Firebase<br>
+                    • Redis for caching<br><br>
+                    
+                    <strong>Mobile:</strong><br>
+                    • React Native, Flutter<br>
+                    • Swift, Kotlin<br>
+                    • Progressive Web Apps<br><br>
+                    
+                    We stay updated with the latest technologies!
+                `;
+            }
+
+            getExperienceResponse() {
+                return `
+                    <strong>🎓 Our Experience:</strong><br><br>
+                    <strong>Worku Fikadu</strong> has been in the tech industry for over 8 years, specializing in:<br><br>
+                    
+                    • Full-stack web development<br>
+                    • Mobile application development<br>
+                    • Digital marketing strategies<br>
+                    • UI/UX design principles<br>
+                    • Project management<br><br>
+                    
+                    <strong>Certifications:</strong><br>
+                    • AWS Certified Developer<br>
+                    • Google Analytics Certified<br>
+                    • Meta Blueprint Certified<br><br>
+                    
+                    <strong>Industries Served:</strong><br>
+                    • E-commerce & Retail<br>
+                    • Finance & Banking<br>
+                    • Healthcare<br>
+                    • Education<br>
+                    • Hospitality<br><br>
+                    
+                    We bring extensive experience to every project!
+                `;
+            }
+
+            getGreetingResponse() {
+                const greetings = [
+                    "Hello! Welcome to Worku Fikadu's portfolio. How can I assist you today?",
+                    "Hi there! I'm here to help you learn about our services. What would you like to know?",
+                    "Greetings! Feel free to ask any questions about our work or services.",
+                    "Hello! I'm your virtual assistant. How can I help you today?"
+                ];
+                return greetings[Math.floor(Math.random() * greetings.length)];
+            }
+
+            getThankYouResponse() {
+                return "You're welcome! 😊 Is there anything else I can help you with regarding our services or projects?";
+            }
+
+            getWelcomeMessage() {
+                return `
+                    <strong>👋 Welcome to Worku Fikadu's Portfolio!</strong><br><br>
+                    I'm your virtual assistant, here to help you with any questions about our services, projects, or expertise.<br><br>
+                    How can I assist you today?<br><br>
+                    <em>You can ask about:</em><br>
+                    • Our services & pricing<br>
+                    • Project timelines<br>
+                    • Technology stack<br>
+                    • Portfolio examples<br>
+                    • Contact information
+                `;
+            }
+
+            getDefaultResponse() {
+                return `
+                    I understand you're asking about "${this.getLastUserMessage()}".<br><br>
+                    While I'm still learning, I can help you with information about:<br><br>
+                    • Web & mobile development services<br>
+                    • Pricing and project timelines<br>
+                    • Our portfolio and technologies<br>
+                    • Contact information<br><br>
+                    Could you please rephrase your question or choose from the suggestion chips below?
+                `;
+            }
+
+            handleSuggestion(suggestion) {
+                const suggestions = {
+                    'services': 'What services do you offer?',
+                    'pricing': 'How much do you charge?',
+                    'timeline': 'How long does a project take?',
+                    'contact': 'How can I contact you?'
+                };
+                
+                this.chatbotInput.value = suggestions[suggestion];
+                this.sendMessage();
+            }
+
+            handleQuickAction(action) {
+                const actions = {
+                    'services': 'Tell me about your web development services',
+                    'pricing': 'What are your prices for a business website?',
+                    'portfolio': 'Show me some examples of your work'
+                };
+                
+                this.chatbotInput.value = actions[action];
+                this.sendMessage();
+            }
+
+            showTypingIndicator() {
+                this.typingIndicator.classList.add('active');
+                this.scrollToBottom();
+            }
+
+            hideTypingIndicator() {
+                this.typingIndicator.classList.remove('active');
+            }
+
+            scrollToBottom() {
+                this.chatbotBody.scrollTop = this.chatbotBody.scrollHeight;
+            }
+
+            clearChat() {
+                this.chatbotBody.innerHTML = '';
+                this.conversationHistory = [];
+                this.addMessage('bot', this.getWelcomeMessage());
+            }
+
+            getLastUserMessage() {
+                const lastMessage = this.conversationHistory.filter(msg => msg.sender === 'user').pop();
+                return lastMessage ? lastMessage.message : '';
+            }
+        }
+
+        // Initialize Chatbot
+        const chatbot = new Chatbot();
+
+        // Add floating animation to chatbot toggle
+        setInterval(() => {
+            if (!chatbot.isOpen) {
+                chatbot.chatbotToggle.style.transform = 'scale(1.05)';
+                setTimeout(() => {
+                    chatbot.chatbotToggle.style.transform = 'scale(1)';
+                }, 500);
+            }
+        }, 3000);
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>

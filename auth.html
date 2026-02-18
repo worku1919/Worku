@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Sign Up - Worku Fikadu</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="Image/photo_2026-01-28_21-28-26.jpg" alt="Worku Fikadu Logo" class="logo">
+                <span class="brand-text">Worku Fikadu</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link" data-translate="home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link" data-translate="about">About Me</a>
+                </li>
+                <li class="nav-item">
+                    <a href="services.html" class="nav-link" data-translate="services">My Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="weborder.html" class="nav-link" data-translate="weborder">Web Order</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link" data-translate="contact">Contact Me</a>
+                </li>
+                <li class="nav-item">
+                    <a href="auth.html" class="nav-link active" data-translate="auth">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a href="chatbot.html" class="nav-link" data-translate="chatbot">Chatbot</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="language-dropdown">
+                        <i class="fas fa-globe"></i> <span data-translate="language">Language</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item language-option" data-lang="en">English</a>
+                        <a href="#" class="dropdown-item language-option" data-lang="am">አማርኛ (Amharic)</a>
+                        <a href="#" class="dropdown-item language-option" data-lang="ao">Afaan Oromoo</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Auth Section -->
+    <section class="auth-section">
+        <div class="container">
+            <div class="auth-container">
+                <div class="auth-tabs">
+                    <button class="tab-btn active" data-tab="login" data-translate="login">Login</button>
+                    <button class="tab-btn" data-tab="signup" data-translate="signup">Sign Up</button>
+                </div>
+                
+                <!-- Login Form -->
+                <div class="auth-form-container" id="login-form">
+                    <form class="auth-form">
+                        <h2 data-translate="welcome-back">Welcome Back</h2>
+                        <p data-translate="login-intro">Login to access your account and track your projects</p>
+                        
+                        <div class="form-group">
+                            <label for="login-email" data-translate="email-label">Email Address</label>
+                            <input type="email" id="login-email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="login-password" data-translate="password-label">Password</label>
+                            <input type="password" id="login-password" name="password" required>
+                            <div class="password-toggle">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="form-options">
+                            <div class="remember-me">
+                                <input type="checkbox" id="remember" name="remember">
+                                <label for="remember" data-translate="remember-me">Remember me</label>
+                            </div>
+                            <a href="#" class="forgot-password" data-translate="forgot-password">Forgot password?</a>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" data-translate="login-btn">Login</button>
+                        
+                        <div class="social-login">
+                            <p data-translate="or-login-with">Or login with</p>
+                            <div class="social-buttons">
+                                <button type="button" class="social-btn google">
+                                    <i class="fab fa-google"></i> Google
+                                </button>
+                                <button type="button" class="social-btn facebook">
+                                    <i class="fab fa-facebook-f"></i> Facebook
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Sign Up Form -->
+                <div class="auth-form-container" id="signup-form">
+                    <form class="auth-form">
+                        <h2 data-translate="create-account">Create Account</h2>
+                        <p data-translate="signup-intro">Sign up to start your project with us</p>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="first-name" data-translate="first-name-label">First Name</label>
+                                <input type="text" id="first-name" name="firstName" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="last-name" data-translate="last-name-label">Last Name</label>
+                                <input type="text" id="last-name" name="lastName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="signup-email" data-translate="email-label">Email Address</label>
+                            <input type="email" id="signup-email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="signup-password" data-translate="password-label">Password</label>
+                            <input type="password" id="signup-password" name="password" required>
+                            <div class="password-toggle">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="confirm-password" data-translate="confirm-password-label">Confirm Password</label>
+                            <input type="password" id="confirm-password" name="confirmPassword" required>
+                            <div class="password-toggle">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="terms-checkbox">
+                                <input type="checkbox" id="terms" name="terms" required>
+                                <label for="terms" data-translate="agree-terms">I agree to the <a href="#">Terms and Conditions</a></label>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" data-translate="signup-btn">Sign Up</button>
+                        
+                        <div class="social-login">
+                            <p data-translate="or-signup-with">Or sign up with</p>
+                            <div class="social-buttons">
+                                <button type="button" class="social-btn google">
+                                    <i class="fab fa-google"></i> Google
+                                </button>
+                                <button type="button" class="social-btn facebook">
+                                    <i class="fab fa-facebook-f"></i> Facebook
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo.png" alt="Worku Fikadu Logo" class="logo">
+                    <h3>Worku Fikadu</h3>
+                    <p data-translate="footer-text">Transforming Ethiopia's digital future through innovative web solutions.</p>
+                </div>
+                <div class="footer-links">
+                    <h4 data-translate="quick-links">Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html" data-translate="home">Home</a></li>
+                        <li><a href="about.html" data-translate="about">About Me</a></li>
+                        <li><a href="services.html" data-translate="services">My Services</a></li>
+                        <li><a href="contact.html" data-translate="contact">Contact Me</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4 data-translate="contact-info">Contact Info</h4>
+                    <p><i class="fas fa-envelope"></i> worku.fikadu@example.com</p>
+                    <p><i class="fas fa-phone"></i> +251 912 345 678</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Jimma, Ethiopia</p>
+                </div>
+                <div class="footer-social">
+                    <h4 data-translate="follow-me">Follow Me</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Worku Fikadu. <span data-translate="rights">All Rights Reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    

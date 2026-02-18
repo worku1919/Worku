@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Order - Worku Fikadu</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/weborder.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="Image/photo_2026-01-28_21-28-26.jpg" alt="Worku Fikadu Logo" class="logo">
+                <span class="brand-text">Worku Fikadu</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link" data-translate="home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link" data-translate="about">About Me</a>
+                </li>
+                <li class="nav-item">
+                    <a href="services.html" class="nav-link" data-translate="services">My Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="weborder.html" class="nav-link active" data-translate="weborder">Web Order</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link" data-translate="contact">Contact Me</a>
+                </li>
+                <li class="nav-item">
+                    <a href="auth.html" class="nav-link" data-translate="auth">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a href="chatbot.html" class="nav-link" data-translate="chatbot">Chatbot</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="language-dropdown">
+                        <i class="fas fa-globe"></i> <span data-translate="language">Language</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item language-option" data-lang="en">English</a>
+                        <a href="#" class="dropdown-item language-option" data-lang="am">አማርኛ (Amharic)</a>
+                        <a href="#" class="dropdown-item language-option" data-lang="ao">Afaan Oromoo</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title" data-translate="weborder-title">Web Order</h1>
+            <p class="page-subtitle" data-translate="weborder-subtitle">Order your custom web solution today</p>
+        </div>
+    </section>
+
+    <!-- Order Form -->
+    <section class="order-form-section">
+        <div class="container">
+            <div class="order-form-container">
+                <div class="order-form-info" data-aos="fade-right">
+                    <h2 data-translate="order-heading">Let's Build Your Dream Website</h2>
+                    <p data-translate="order-intro">
+                        Fill out the form below with details about your project, and I'll get back to you with a personalized quote and timeline. Whether you need an e-commerce platform, business website, blog, or custom web solution, I'm here to bring your vision to life.
+                    </p>
+                    <div class="info-points">
+                        <div class="info-point">
+                            <i class="fas fa-check-circle"></i>
+                            <span data-translate="info-point1">Free consultation and project assessment</span>
+                        </div>
+                        <div class="info-point">
+                            <i class="fas fa-check-circle"></i>
+                            <span data-translate="info-point2">Customized solutions tailored to your needs</span>
+                        </div>
+                        <div class="info-point">
+                            <i class="fas fa-check-circle"></i>
+                            <span data-translate="info-point3">Transparent pricing with no hidden fees</span>
+                        </div>
+                        <div class="info-point">
+                            <i class="fas fa-check-circle"></i>
+                            <span data-translate="info-point4">Timely delivery and ongoing support</span>
+                        </div>
+                    </div>
+                    <div class="contact-info">
+                        <h3 data-translate="contact-directly">Have Questions? Contact Me Directly</h3>
+                        <p><i class="fas fa-envelope"></i> worku.fikadu@example.com</p>
+                        <p><i class="fas fa-phone"></i> +251 912 345 678</p>
+                    </div>
+                </div>
+                <div class="order-form-wrapper" data-aos="fade-left">
+                    <form id="orderForm" class="order-form">
+                        <div class="form-group">
+                            <label for="name" data-translate="name-label">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" data-translate="email-label">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone" data-translate="phone-label">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="service" data-translate="service-label">Service Type *</label>
+                            <select id="service" name="service" required>
+                                <option value="" disabled selected data-translate="select-service">Select a service</option>
+                                <option value="ecommerce" data-translate="ecommerce-option">E-commerce Platform</option>
+                                <option value="business" data-translate="business-option">Business & Corporate Website</option>
+                                <option value="blog" data-translate="blog-option">Blog & Content Management</option>
+                                <option value="custom" data-translate="custom-option">Custom Web Solution</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="budget" data-translate="budget-label">Estimated Budget</label>
+                            <select id="budget" name="budget">
+                                <option value="" disabled selected data-translate="select-budget">Select budget range</option>
+                                <option value="250-500">$250 - $500</option>
+                                <option value="500-1000">$500 - $1000</option>
+                                <option value="1000-2000">$1000 - $2000</option>
+                                <option value="2000+">$2000+</option>
+                                <option value="discuss" data-translate="discuss-budget">Discuss during consultation</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="timeline" data-translate="timeline-label">Desired Timeline</label>
+                            <select id="timeline" name="timeline">
+                                <option value="" disabled selected data-translate="select-timeline">Select timeline</option>
+                                <option value="asap" data-translate="asap">ASAP</option>
+                                <option value="1-month" data-translate="1-month">Within 1 month</option>
+                                <option value="2-months" data-translate="2-months">Within 2 months</option>
+                                <option value="3-months" data-translate="3-months">Within 3 months</option>
+                                <option value="flexible" data-translate="flexible">Flexible</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="description" data-translate="description-label">Project Description *</label>
+                            <textarea id="description" name="description" rows="5" required data-translate-placeholder="description-placeholder"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="features" data-translate="features-label">Required Features</label>
+                            <div class="checkbox-group">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="responsive" name="features" value="responsive">
+                                    <label for="responsive" data-translate="responsive-feature">Responsive Design</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="cms" name="features" value="cms">
+                                    <label for="cms" data-translate="cms-feature">Content Management System</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="payment" name="features" value="payment">
+                                    <label for="payment" data-translate="payment-feature">Payment Integration</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="seo" name="features" value="seo">
+                                    <label for="seo" data-translate="seo-feature">SEO Optimization</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="analytics" name="features" value="analytics">
+                                    <label for="analytics" data-translate="analytics-feature">Analytics Integration</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="multilingual" name="features" value="multilingual">
+                                    <label for="multilingual" data-translate="multilingual-feature">Multilingual Support</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="reference" data-translate="reference-label">Reference Websites (Optional)</label>
+                            <input type="text" id="reference" name="reference" data-translate-placeholder="reference-placeholder">
+                        </div>
+                        <div class="form-group">
+                            <label for="files" data-translate="files-label">Attach Files (Optional)</label>
+                            <input type="file" id="files" name="files" multiple>
+                            <small data-translate="files-note">You can upload design mockups, specifications, or other relevant files.</small>
+                        </div>
+                        <div class="form-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="terms" name="terms" required>
+                                <label for="terms" data-translate="terms-label">I agree to the terms and conditions</label>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary" data-translate="submit-order">Submit Order</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Process -->
+    <section class="order-process">
+        <div class="container">
+            <h2 class="section-title" data-translate="process-title">What Happens Next?</h2>
+            <div class="process-steps">
+                <div class="step" data-aos="fade-up">
+                    <div class="step-icon">
+                        <i class="fas fa-receipt"></i>
+                    </div>
+                    <h3 data-translate="step1-title">Order Confirmation</h3>
+                    <p data-translate="step1-desc">You'll receive an email confirmation of your order submission within 24 hours.</p>
+                </div>
+                <div class="step" data-aos="fade-up" data-aos-delay="100">
+                    <div class="step-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3 data-translate="step2-title">Consultation Call</h3>
+                    <p data-translate="step2-desc">We'll schedule a consultation to discuss your project requirements in detail.</p>
+                </div>
+                <div class="step" data-aos="fade-up" data-aos-delay="200">
+                    <div class="step-icon">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <h3 data-translate="step3-title">Quote & Proposal</h3>
+                    <p data-translate="step3-desc">You'll receive a detailed quote and project proposal based on our discussion.</p>
+                </div>
+                <div class="step" data-aos="fade-up" data-aos-delay="300">
+                    <div class="step-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 data-translate="step4-title">Project Kickoff</h3>
+                    <p data-translate="step4-desc">Once approved, we'll begin development with regular updates on progress.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title" data-translate="faq-title">Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item active" data-aos="fade-up">
+                    <div class="faq-question">
+                        <h3 data-translate="faq1-question">How long does it take to complete a website?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-translate="faq1-answer">The timeline depends on the complexity of the project. A simple business website typically takes 2-4 weeks, while a complex e-commerce platform may take 6-8 weeks or more. We'll provide a specific timeline after our initial consultation.</p>
+                    </div>
+                </div>
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="faq-question">
+                        <h3 data-translate="faq2-question">Do you provide ongoing support after the website is launched?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-translate="faq2-answer">Yes, I offer various maintenance and support packages to ensure your website continues to function optimally after launch. This includes updates, security checks, backups, and technical support.</p>
+                    </div>
+                </div>
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="faq-question">
+                        <h3 data-translate="faq3-question">Can you work with existing websites or do you only build from scratch?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-translate="faq3-answer">I can do both! Whether you need a brand new website built from scratch or want to redesign/improve an existing website, I can help. We can discuss the best approach during our consultation.</p>
+                    </div>
+                </div>
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="faq-question">
+                        <h3 data-translate="faq4-question">What payment methods do you accept?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-translate="faq4-answer">I accept various payment methods including bank transfers, mobile money, and online payment platforms. Typically, a 50% deposit is required to begin work, with the remaining 50% due upon completion.</p>
+                    </div>
+                </div>
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="faq-question">
+                        <h3 data-translate="faq5-question">Do you offer discounts for non-profit organizations or startups?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-translate="faq5-answer">Yes, I offer special pricing for non-profit organizations and early-stage startups. Please mention your organization type when submitting your order, and we'll discuss applicable discounts during our consultation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo.png" alt="Worku Fikadu Logo" class="logo">
+                    <h3>Worku Fikadu</h3>
+                    <p data-translate="footer-text">Transforming Ethiopia's digital future through innovative web solutions.</p>
+                </div>
+                <div class="footer-links">
+                    <h4 data-translate="quick-links">Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html" data-translate="home">Home</a></li>
+                        <li><a href="about.html" data-translate="about">About Me</a></li>
+                        <li><a href="services.html" data-translate="services">My Services</a></li>
+                        <li><a href="contact.html" data-translate="contact">Contact Me</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4 data-translate="contact-info">Contact Info</h4>
+                    <p><i class="fas fa-envelope"></i> worku.fikadu@example.com</p>
+                    <p><i class="fas fa-phone"></i> +251 912 345 678</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Jimma, Ethiopia</p>
+                </div>
+                <div class="footer-social">
+                    <h4 data-translate="follow-me">Follow Me</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Worku Fikadu. <span data-translate="rights">All Rights Reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    

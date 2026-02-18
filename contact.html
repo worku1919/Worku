@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me - Worku Fikadu</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="Image/photo_2026-01-28_21-28-26.jpg" alt="Worku Fikadu Logo" class="logo">
+                <span class="brand-text">Worku Fikadu</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link" data-translate="home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link" data-translate="about">About Me</a>
+                </li>
+                <li class="nav-item">
+                    <a href="services.html" class="nav-link" data-translate="services">My Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="weborder.html" class="nav-link" data-translate="weborder">Web Order</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link active" data-translate="contact">Contact Me</a>
+                </li>
+                <li class="nav-item">
+                    <a href="auth.html" class="nav-link" data-translate="auth">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a href="chatbot.html" class="nav-link" data-translate="chatbot">Chatbot</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="language-dropdown">
+                        <i class="fas fa-globe"></i> <span data-translate="language">Language</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item language-option" data-lang="en">English</a>
+                        <a href="#" class="dropdown-item language-option" data-lang="am">አማርኛ (Amharic)</a>
+                        <a href="#" class="dropdown-item language-option" data-lang="ao">Afaan Oromoo</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title" data-translate="contact-title">Contact Me</h1>
+            <p class="page-subtitle" data-translate="contact-subtitle">Get in touch to discuss your project</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-info" data-aos="fade-right">
+                    <h2 data-translate="contact-heading">Let's Connect</h2>
+                    <p data-translate="contact-intro">
+                        I'm always interested in hearing about new projects and opportunities. Whether you have a question or just want to say hi, feel free to get in touch!
+                    </p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3 data-translate="location">Location</h3>
+                                <p>Jimma University, Jimma, Ethiopia</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3 data-translate="email">Email</h3>
+                                <p>worku.fikadu@example.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3 data-translate="phone">Phone</h3>
+                                <p>+251 912 345 678</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <h3 data-translate="follow-me">Follow Me</h3>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper" data-aos="fade-left">
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="name" data-translate="name-label">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" data-translate="email-label">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject" data-translate="subject-label">Subject *</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" data-translate="message-label">Message *</label>
+                            <textarea id="message" name="message" rows="5" required data-translate-placeholder="message-placeholder"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" data-translate="send-message">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <h2 class="section-title" data-translate="find-me">Find Me</h2>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.507846424545!2d36.8268743147755!3d7.670699994475529!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KsNDAnMTYuNSJTIDM2wrA0OSczNy4zIkU!5e0!3m2!1sen!2set!4v1627349037244!5m2!1sen!2set" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo.png" alt="Worku Fikadu Logo" class="logo">
+                    <h3>Worku Fikadu</h3>
+                    <p data-translate="footer-text">Transforming Ethiopia's digital future through innovative web solutions.</p>
+                </div>
+                <div class="footer-links">
+                    <h4 data-translate="quick-links">Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html" data-translate="home">Home</a></li>
+                        <li><a href="about.html" data-translate="about">About Me</a></li>
+                        <li><a href="services.html" data-translate="services">My Services</a></li>
+                        <li><a href="weborder.html" data-translate="weborder">Web Order</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4 data-translate="contact-info">Contact Info</h4>
+                    <p><i class="fas fa-envelope"></i> worku.fikadu@example.com</p>
+                    <p><i class="fas fa-phone"></i> +251 912 345 678</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Jimma, Ethiopia</p>
+                </div>
+                <div class="footer-social">
+                    <h4 data-translate="follow-me">Follow Me</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Worku Fikadu. <span data-translate="rights">All Rights Reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    
