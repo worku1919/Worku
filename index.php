@@ -694,8 +694,8 @@ require_once 'models/Project.php';
                 </div>
                 <div class="footer-contact">
                     <h4 data-translate="contact-info">Contact Info</h4>
-                    <p><i class="fas fa-envelope"></i> worku.fikadu@example.com</p>
-                    <p><i class="fas fa-phone"></i> +251 912 345 678</p>
+                    <p><i class="fas fa-envelope"></i> workufikadu643@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +251 919639519</p>
                     <p><i class="fas fa-map-marker-alt"></i> Jimma, Ethiopia</p>
                 </div>
                 <div class="footer-social">
@@ -709,14 +709,14 @@ require_once 'models/Project.php';
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 Worku Fikadu. <span data-translate="rights">All Rights Reserved.</span></p>
+                <p>&copy; 2026 Worku Fikadu. <span data-translate="rights">All Rights Reserved.</span></p>
             </div>
         </div>
     </footer>
 
     <script>
         <script>
-document.addEventListener('DOMContentLoaded', function() {
+     document.addEventListener('DOMContentLoaded', function() {
     const projectsContainer = document.getElementById('projectsContainer');
     const contactForm = document.getElementById('contactForm');
     const filterButtons = document.querySelectorAll('.filter-btn');
